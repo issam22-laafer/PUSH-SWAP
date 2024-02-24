@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/24 09:20:23 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/24 11:13:34 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void insert_back(t_data **head, int nb);
 int if_number(char *str);
 int ft_atoi(char *str);
 void check_doubles(t_data **stack_a);
+void swap_a(t_data **stack_a);
 
 #endif
