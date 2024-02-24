@@ -6,11 +6,11 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 22:05:29 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/23 08:29:15 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/24 10:53:16 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_count_w(char const *str, char c)
 {

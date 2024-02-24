@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   moves1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 18:32:19 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/23 08:31:35 by lissam           ###   ########.fr       */
+/*   Created: 2024/02/24 10:45:20 by lissam            #+#    #+#             */
+/*   Updated: 2024/02/24 10:51:30 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putstr(char *str)
+int count_nodes(t_data **stack_a)
 {
-	int	i;
+    t_data  *tmp;
+    int     i;
 
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+    tmp = *stack_a;
+    i = 0;
+    while (tmp)
+    {
+        i++;
+        tmp = tmp->next;
+    }
+    return (i);
 }

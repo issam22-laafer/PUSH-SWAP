@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 16:45:55 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/23 16:48:35 by lissam           ###   ########.fr       */
+/*   Created: 2024/02/22 18:32:19 by lissam            #+#    #+#             */
+/*   Updated: 2024/02/24 10:53:12 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_atoi(char *str)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	s;
-	int	r;
 
 	i = 0;
-	s = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (str[i])
 	{
-		if (str[i] == '-')
-			s = s * -1;
+		write(1, &str[i], 1);
 		i++;
 	}
-	r = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		r = (r * 10) + (str[i] - '0');
-		i++;
-	}
-	return (r * s);
 }

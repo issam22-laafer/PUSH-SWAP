@@ -6,11 +6,11 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 22:21:06 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/23 08:33:37 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/24 10:53:19 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static char	*ft_fill(char const *s, unsigned int start, size_t len)
 {

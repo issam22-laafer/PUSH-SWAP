@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = ft_putstr.c push_swap.c ft_atoi.c utils.c check_args.c ft_split.c parsing.c ft_substr.c
+SRC = ./Utils_folder/ft_putstr.c moves1.c push_swap.c ./Utils_folder/ft_atoi.c utils.c check_args.c ./Utils_folder/ft_split.c parsing.c ./Utils_folder/ft_substr.c
 
 OBJ = $(SRC:.c=.o)
 
