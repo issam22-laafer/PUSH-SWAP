@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:45:55 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/24 10:53:07 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 17:18:42 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_atoi(char *str)
 	int	i;
 	int	s;
 	int	r;
+	long long d;
 
 	i = 0;
 	s = 1;
@@ -29,10 +30,19 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	r = 0;
+	d = 0;
+
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		r = (r * 10) + (str[i] - '0');
+		d = (d * 10) + (str[i] - '0');
 		i++;
+	}
+	d = d * s;
+	if(d > INT_MAX || d < INT_MIN)
+	{
+		ft_putstr("Eroor");
+		exit(1);
 	}
 	return (r * s);
 }

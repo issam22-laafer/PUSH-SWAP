@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 15:51:15 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 18:19:45 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void push_swap(t_numbers *the_numbers)
 	stack_b = NULL;
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a);
-	check_int(&stack_a);
+	push_b(&stack_b,&stack_a);
 }
 int main(int ac, char **av)
 {
