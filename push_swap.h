@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 09:23:09 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 10:26:45 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,15 @@ void insert_back(t_data **head, int nb);
 int if_number(char *str);
 int ft_atoi(char *str);
 void check_doubles(t_data **stack_a);
+int count_nodes(t_data **stack);
+
 void swap_a(t_data **stack_a);
 void rotate_a(t_data **stack_a);
 void reverse_rotate_a(t_data **stack_a);
 void push_b(t_data **stack_a, t_data **stack_b);
+void swap_b(t_data **stack_b);
+void rotate_b(t_data **stack_b);
+void reverse_rotate_b(t_data **stack_b);
+void push_a(t_data **stack_b, t_data **stack_a);
 
 #endif

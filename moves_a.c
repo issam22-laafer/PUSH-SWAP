@@ -6,26 +6,11 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:45:20 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 10:03:06 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 10:26:14 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int count_nodes(t_data **stack_a)
-{
-    t_data *tmp;
-    int i;
-
-    tmp = *stack_a;
-    i = 0;
-    while (tmp)
-    {
-        i++;
-        tmp = tmp->next;
-    }
-    return (i);
-}
 
 void swap_a(t_data **stack_a)
 {

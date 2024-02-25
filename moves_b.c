@@ -6,9 +6,83 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 09:17:30 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 09:17:46 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 10:26:06 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void swap_b(t_data **stack_b)
+{
+    // printf("Number of nodes ==> %d\n",count_nodes(stack_b));
+
+    if (count_nodes(stack_b) > 1)
+    {
+        t_data *tmp;
+        t_data *tmp1;
+
+        tmp = *stack_b;
+        tmp1 = tmp->next;
+        tmp->next = tmp->next->next;
+        tmp1->next = tmp;
+
+        *stack_b = tmp1;
+    }
+}
+
+void rotate_b(t_data **stack_b)
+{
+    if (count_nodes(stack_b) > 1)
+    {
+
+        t_data *tmp;
+        t_data *tmp1;
+
+        tmp = *stack_b;
+        tmp1 = *stack_b;
+
+        while (tmp->next)
+        {
+            tmp = tmp->next;
+        }
+        tmp->next = *stack_b;
+        *stack_b = tmp1->next;
+        tmp1->next = NULL;
+    }
+}
+
+void reverse_rotate_b(t_data **stack_b)
+{
+    if (count_nodes(stack_b) > 1)
+    {
+        t_data *tmp;
+        t_data *second_last;
+
+        tmp = *stack_b;
+        second_last = NULL;
+
+        while (tmp->next)
+        {
+            second_last = tmp;
+            tmp = tmp->next;
+        }
+        tmp->next = *stack_b;
+        *stack_b = tmp;
+        second_last->next = NULL;
+    }
+}
+
+void push_a(t_data **stack_b, t_data **stack_a)
+{
+    if(count_nodes(stack_b) > 0)
+    {
+        t_data *tmp_a;
+        t_data *tmp_b;
+
+        tmp_a = *stack_a;
+        tmp_b = *stack_b;
+        *stack_b = tmp_b->next;
+        *stack_a = tmp_b;
+        tmp_b->next = tmp_a;
+    }
+}
