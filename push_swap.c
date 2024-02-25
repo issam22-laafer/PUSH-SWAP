@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 10:03:49 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 10:09:56 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void push_swap(t_numbers *the_numbers)
 
 
 	int i;
-
 	stack_a = NULL;
 	stack_b = NULL;
 
