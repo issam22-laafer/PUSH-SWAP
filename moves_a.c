@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves1.c                                           :+:      :+:    :+:   */
+/*   moves_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:45:20 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/24 18:23:17 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 10:03:06 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,20 @@ void reverse_rotate_a(t_data **stack_a)
         tmp->next = *stack_a;
         *stack_a = tmp;
         second_last->next = NULL;
+    }
+}
+
+void push_b(t_data **stack_a, t_data **stack_b)
+{
+    if(count_nodes(stack_a) > 0)
+    {
+        t_data *tmp_a;
+        t_data *tmp_b;
+
+        tmp_a = *stack_a;
+        tmp_b = *stack_b;
+        *stack_a = tmp_a->next;
+        *stack_b = tmp_a;
+        tmp_a->next = tmp_b;
     }
 }
