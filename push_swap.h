@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 10:26:45 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 11:02:49 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,9 @@ void swap_b(t_data **stack_b);
 void rotate_b(t_data **stack_b);
 void reverse_rotate_b(t_data **stack_b);
 void push_a(t_data **stack_b, t_data **stack_a);
+void ss(t_data **stack_a,t_data **stack_b);
+void rr(t_data **stack_a,t_data **stack_b);
+void rrr(t_data **stack_a,t_data **stack_b);
+
 
 #endif
