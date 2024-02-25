@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/24 09:20:02 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/24 13:45:42 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void check_doubles(t_data **stack_a)
 
 
 	temp1 = *stack_a;
-	temp2 = temp1->next;
 
 	while (temp1)
 	{
+		temp2 = temp1->next;
 		while(temp2)
 		{
 			if(temp1->data == temp2->data)
