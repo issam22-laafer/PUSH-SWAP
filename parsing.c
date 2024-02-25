@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/24 13:45:42 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 16:03:14 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,22 @@ void check_doubles(t_data **stack_a)
 		}
 		temp1 = temp1->next;
 	}
+}
+
+void check_int(t_data **stack_a)
+{
+	t_data *tmp;
+
+	tmp = *stack_a;
+	while (tmp)
+	{
+		printf("%d\n",tmp->data);
+		if(tmp->data > INT_MAX || tmp->data < INT_MIN)
+		{
+			ft_putstr("Error\n");
+			exit(1);
+		}
+		tmp = tmp->next;
+	}
+	
 }

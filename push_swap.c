@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 10:29:31 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 15:51:15 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,39 +43,12 @@ void push_swap(t_numbers *the_numbers)
 {
 	t_data *stack_a;
 	t_data *stack_b;
-	t_data *temp_a;
-	t_data *temp_b;
 
-
-	int i;
 	stack_a = NULL;
 	stack_b = NULL;
-
-	i = 0;
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a);
-	// swap_a(&stack_a);
-	// rotate_a(&stack_a);
-	// reverse_rotate_a(&stack_a);
-	// push_b(&stack_a,&stack_b);
-	// push_b(&stack_a,&stack_b);
-	// swap_b(&stack_b);
-	// rotate_b(&stack_b);
-	// reverse_rotate_b(&stack_b);
-	// push_a(&stack_b,&stack_a);
-	// temp_a = stack_a;
-	// while (temp_a)
-	// {
-	// 	printf("---->%d\n", temp_a->data);
-	// 	temp_a = temp_a->next;
-	// }
-	// printf("================\n");
-	// temp_b = stack_b;
-	// while (temp_b)
-	// {
-	// 	printf("---->%d\n", temp_b->data);
-	// 	temp_b = temp_b->next;
-	// }
+	check_int(&stack_a);
 }
 int main(int ac, char **av)
 {

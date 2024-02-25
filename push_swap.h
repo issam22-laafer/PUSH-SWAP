@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 11:02:49 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/25 16:02:49 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <limits.h>
 
 typedef struct node
 {
@@ -41,6 +42,7 @@ int if_number(char *str);
 int ft_atoi(char *str);
 void check_doubles(t_data **stack_a);
 int count_nodes(t_data **stack);
+void check_int(t_data **stack_a);
 
 void swap_a(t_data **stack_a);
 void rotate_a(t_data **stack_a);
