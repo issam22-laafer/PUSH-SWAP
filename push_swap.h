@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 17:19:24 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/26 17:01:40 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct numbers
 } t_numbers;
 
 void ft_putstr(char *str);
-void check_n_args(int ac);
+void	check_n_args(int ac ,char **av);
 char **ft_split(char const *s, char c);
 size_t ft_strlen(const char *str);
 char *ft_substr(char const *s, unsigned int start, size_t len);

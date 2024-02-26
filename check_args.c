@@ -6,17 +6,17 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:30:31 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/23 08:29:29 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/26 17:02:29 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_n_args(int ac)
+void	check_n_args(int ac ,char **av)
 {
-	if (ac == 1)
+	if (ac == 1 || !av[1][0])
 	{
-		ft_putstr("Number of argc should be more than 1");
+		ft_putstr("Error\n");
 		exit(1);
 	}
 }

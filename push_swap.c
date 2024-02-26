@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 18:19:45 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/26 17:01:45 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void get_numbers(int ac, char **av, t_numbers *the_numbers)
 	else
 		the_numbers->numbers = av + 1;
 }
-
+ 
 void fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 {
 	int i;
@@ -35,7 +35,7 @@ void fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 		{
 			ft_putstr("Error\n");
 			exit(1);
-		}
+		} 
 		i++;
 	}
 }
@@ -48,22 +48,13 @@ void push_swap(t_numbers *the_numbers)
 	stack_b = NULL;
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a);
-	push_b(&stack_b,&stack_a);
 }
 int main(int ac, char **av)
 {
 	t_numbers the_numbers;
 
 	the_numbers.argc_number = ac;
-	check_n_args(ac);
+	check_n_args(ac,av);
 	get_numbers(ac, av, &the_numbers);
 	push_swap(&the_numbers);
-	// creat_stack_a(&the_numbers,&stack_a);
-	// int			i;
-	// i = 0;
-	// while (the_numbers.numbers[i])
-	// {
-	// 	printf("%s\n", the_numbers.numbers[i]);
-	// 	i++;
-	// }
 }

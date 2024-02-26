@@ -7,7 +7,7 @@ OBJ = $(SRC:.c=.o)
 CC = cc
 
 
-all = $(NAME)
+all : $(NAME)
 
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -c $< -o $@
@@ -21,5 +21,5 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+re: fclean all clean
 	
