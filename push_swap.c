@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/26 19:42:26 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/26 21:16:05 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void push_swap(t_numbers *the_numbers)
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a);
 	sort(&stack_a,&stack_b);
-
+	
 	t_data *tmp;
 	tmp = stack_a;
 	while (tmp)
