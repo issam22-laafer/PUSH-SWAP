@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/26 17:01:40 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/26 18:28:44 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct node
 
 typedef struct numbers
 {
-	char **numbers;
+	char **numbers; 
 	int argc_number;
 } t_numbers;
 
@@ -53,6 +53,7 @@ void push_a(t_data **stack_b, t_data **stack_a);
 void ss(t_data **stack_a,t_data **stack_b);
 void rr(t_data **stack_a,t_data **stack_b);
 void rrr(t_data **stack_a,t_data **stack_b);
+void sort(t_data **satck_a ,t_data **satck_b);
 
 
 #endif
