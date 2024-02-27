@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/26 21:52:35 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/27 13:53:50 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,23 @@ void sort_3(t_data **stack_a)
     }
 }
 
+void turk(t_data **stack_a, t_data **stack_b)
+{
+    int number_of_nodes;
+
+    number_of_nodes = count_nodes(stack_a);
+    while (number_of_nodes > 3)
+    {
+        push_b(stack_a,stack_b);
+        number_of_nodes--;
+    }
+    
+}
+
 void sort(t_data **stack_a, t_data **stack_b)
 {
-    t_data *tmp;
-
     if (count_nodes(stack_a) > 1 && count_nodes(stack_a) <= 3)
         sort_3(stack_a);
-    tmp = *stack_b;
+    else
+        turk(stack_a,stack_b);
 }

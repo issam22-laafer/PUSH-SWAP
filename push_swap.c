@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/26 21:16:05 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/27 10:23:54 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,20 @@ void push_swap(t_numbers *the_numbers)
 	sort(&stack_a,&stack_b);
 	
 	t_data *tmp;
+	printf("===========Stack A==========\n");
 	tmp = stack_a;
 	while (tmp)
 	{
 		printf("==> %d\n",tmp->data);
 		tmp = tmp->next;
 	}
-	
+	printf("===========Stack B==========\n");
+	tmp = stack_b;
+	while (tmp)
+	{
+		printf("==> %d\n",tmp->data);
+		tmp = tmp->next;
+	}
 }
 int main(int ac, char **av)
 {
