@@ -6,18 +6,18 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/27 13:53:50 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/29 09:29:56 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int the_big_a(t_data **stack_a)
+int the_big_n(t_data **stack)
 {
     t_data *tmp;
     int the_big;
 
-    tmp = *stack_a;
+    tmp = *stack;
     the_big = tmp->data;
     while (tmp)
     {
@@ -34,7 +34,7 @@ void sort_3(t_data **stack_a)
     int big;
 
     tmp = *stack_a;
-    big = the_big_a(stack_a);
+    big = the_big_n(stack_a);
     if (tmp->data == big)
     {
         rotate_a(stack_a);
@@ -54,17 +54,32 @@ void sort_3(t_data **stack_a)
     }
 }
 
+
+
 void turk(t_data **stack_a, t_data **stack_b)
 {
     int number_of_nodes;
 
     number_of_nodes = count_nodes(stack_a);
-    while (number_of_nodes > 3)
+    if(number_of_nodes == 4)
     {
         push_b(stack_a,stack_b);
+        ft_putstr("pb\n");
+    }
+    else if(number_of_nodes > 4)
+    {
+        push_b(stack_a,stack_b);
+        ft_putstr("pb\n");
+        push_b(stack_a,stack_b);
+        ft_putstr("pb\n");
+    }
+    number_of_nodes = count_nodes(stack_a);
+    while (number_of_nodes > 3)
+    {
+        target_push(stack_a,stack_b);
         number_of_nodes--;
     }
-    
+    sort_3(stack_a);
 }
 
 void sort(t_data **stack_a, t_data **stack_b)
