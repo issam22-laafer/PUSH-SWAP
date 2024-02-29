@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	check_n_args(int ac ,char **av)
+void	check_n_args(int ac, char **av)
 {
 	if (ac == 1 || !av[1][0])
 	{

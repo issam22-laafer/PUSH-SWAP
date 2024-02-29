@@ -18,13 +18,12 @@
 //     head->data = 15;
 // }
 
-
 int	if_number(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if(str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
 	{
@@ -35,20 +34,18 @@ int	if_number(char *str)
 	return (1);
 }
 
-void check_doubles(t_data **stack_a)
+void	check_doubles(t_data **stack_a)
 {
-	t_data *temp1;
-	t_data *temp2;
-
+	t_data	*temp1;
+	t_data	*temp2;
 
 	temp1 = *stack_a;
-
 	while (temp1)
 	{
 		temp2 = temp1->next;
-		while(temp2)
+		while (temp2)
 		{
-			if(temp1->data == temp2->data)
+			if (temp1->data == temp2->data)
 			{
 				ft_putstr("Eroor\n");
 				exit(1);

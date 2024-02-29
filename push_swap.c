@@ -6,13 +6,13 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/28 09:07:48 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/29 10:55:47 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void get_numbers(int ac, char **av, t_numbers *the_numbers)
+void	get_numbers(int ac, char **av, t_numbers *the_numbers)
 {
 	if (ac == 2)
 	{
@@ -21,10 +21,10 @@ void get_numbers(int ac, char **av, t_numbers *the_numbers)
 	else
 		the_numbers->numbers = av + 1;
 }
- 
-void fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
+
+void	fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (the_numbers->numbers[i])
@@ -35,43 +35,44 @@ void fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 		{
 			ft_putstr("Error\n");
 			exit(1);
-		} 
+		}
 		i++;
 	}
 }
-void push_swap(t_numbers *the_numbers)
+
+void	push_swap(t_numbers *the_numbers)
 {
-	t_data *stack_a;
-	t_data *stack_b;
+	t_data	*stack_a;
+	t_data	*stack_b;
+	t_data	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a);
-	sort(&stack_a,&stack_b);
-	
-	t_data *tmp;
+	sort(&stack_a, &stack_b);
 	printf("===========Stack A==========\n");
 	tmp = stack_a;
 	while (tmp)
 	{
-		printf("==> %d\n",tmp->data);
+		printf("==> %d\n", tmp->data);
 		tmp = tmp->next;
 	}
 	printf("===========Stack B==========\n");
 	tmp = stack_b;
 	while (tmp)
 	{
-		printf("==> %d\n",tmp->data);
+		printf("==> %d\n", tmp->data);
 		tmp = tmp->next;
 	}
 }
-int main(int ac, char **av)
+
+int	main(int ac, char **av)
 {
-	t_numbers the_numbers;
+	t_numbers	the_numbers;
 
 	the_numbers.argc_number = ac;
-	check_n_args(ac,av);
+	check_n_args(ac, av);
 	get_numbers(ac, av, &the_numbers);
 	push_swap(&the_numbers);
 }

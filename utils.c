@@ -43,17 +43,17 @@ void	insert_back(t_data **head, int nb)
 	}
 }
 
-int count_nodes(t_data **stack)
+int	count_nodes(t_data **stack)
 {
-    t_data *tmp;
-    int i;
+	t_data *tmp;
+	int i;
 
-    tmp = *stack;
-    i = 0;
-    while (tmp)
-    {
-        i++;
-        tmp = tmp->next;
-    }
-    return (i);
+	tmp = *stack;
+	i = 0;
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }
