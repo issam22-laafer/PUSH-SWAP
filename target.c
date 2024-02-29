@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:20:35 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/29 12:05:04 by lissam           ###   ########.fr       */
+/*   Updated: 2024/02/29 15:36:06 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,66 +74,64 @@ int	count_moves(int nb, int target, t_data **stack_a, t_data **stack_b)
 	return (moves(index_a, index_b, stack_a, stack_b));
 }
 
-void push_to_b(t_data **stack_a,t_data **stack_b,int nb,int target)
+void	push_to_b(t_data **stack_a, t_data **stack_b, int nb, int target)
 {
-    t_data *tmp_a;
-    t_data *tmp_b;
-    int i;
-    int j;
+	t_data	*tmp_a;
+	t_data	*tmp_b;
+	int		i;
+	int		j;
 
-    i = 0;
-    j = 0;
-    tmp_a = *stack_a;
-    while (tmp_a->data != nb)
-    {
-        i++;
-        tmp_a = tmp_a->next;
-    }
-    if(i <= count_nodes(stack_a)/2)
-    {
-        tmp_a = *stack_a;
-        while (tmp_a->data != nb)
-        {
-            rotate_a(stack_a);
-            tmp_a = *stack_a;
-        }
-        
-    }
-    else
-    {
-        tmp_a = *stack_a;
-        while (tmp_a->data != nb)
-        {
-            reverse_rotate_a(stack_a);
-            tmp_a = *stack_a;
-        }
-    }
-    tmp_b = *stack_b;
-    while (tmp_b->data != target)
-    {
-        j++;
-        tmp_b = tmp_b->next;
-    }
-    if(j <= count_nodes(stack_b)/2)
-    {
-        tmp_b = *stack_b;
-        while (tmp_b->data != target)
-        {
-            rotate_b(stack_b);
-            tmp_b = *stack_b;
-        }
-        
-    }
-    else
-    {
-        tmp_b = *stack_b;
-        while (tmp_b->data != target)
-        {
-            reverse_rotate_b(stack_b);
-            tmp_b = *stack_b;
-        }
-    }
-    push_b(stack_a,stack_b);
+	i = 0;
+	j = 0;
+	tmp_a = *stack_a;
+	while (tmp_a->data != nb)
+	{
+		tmp_a = tmp_a->next;
+		i++;
+	}
+	printf("index of %d target is %d\n",nb,i);
+
+	if (i <= count_nodes(stack_a) / 2)
+	{
+		while (i > 0)
+		{
+			rotate_a(stack_a);
+			i--;
+		}
+	}
+	else
+	{
+		while (i < count_nodes(stack_a))
+		{
+			reverse_rotate_a(stack_a);
+			i++;
+		}
+	}
+	tmp_b = *stack_b;
+	while (tmp_b->data != target)
+	{
+		tmp_b = tmp_b->next;
+		j++;
+	}
+	printf("index of %d target is %d\n",target,j);
+	if (j <= count_nodes(stack_b) / 2)
+	{
+		while (j > 0)
+		{
+			rotate_b(stack_b);
+			j--;
+		}
+	}
+	else
+	{
+		while (j < count_nodes(stack_b))
+		{
+			reverse_rotate_b(stack_b);
+			j++;
+		}
+	}
+	push_b(stack_a, stack_b);
+	ft_putstr("pb\n");
 }
 
 void	target_push(t_data **stack_a, t_data **stack_b)
@@ -167,12 +165,10 @@ void	target_push(t_data **stack_a, t_data **stack_b)
 			number_moves = count_moves(tmp_a->data, target, stack_a, stack_b);
 			the_nb = tmp_a->data;
 			the_target = target;
-            printf("Number of moves required to push %d to stack b is  =>  %d\n",tmp_a->data ,number_moves);
 		}
 		tmp_a = tmp_a->next;
 	}
-    push_to_b(stack_a,stack_b,the_nb,target);
+	printf("The number is %d : target => %d =>  MOves :%d\n", the_nb,
+		the_target, number_moves);
+	push_to_b(stack_a, stack_b, the_nb, the_target);
 }
-
-
-
