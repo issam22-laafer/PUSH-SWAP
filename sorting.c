@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 08:37:31 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 10:26:47 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,21 @@ void	sort_3(t_data **stack_a)
 	}
 }
 
+int	is_sorted(t_data **stack_a)
+{
+	t_data	*tmp;
+
+	tmp = *stack_a;
+	while (tmp && tmp->next)
+	{
+		if (tmp->data < tmp->next->data)
+			tmp = tmp->next;
+		else
+			return (0);
+	}
+	return (1);
+}
+
 void	turk(t_data **stack_a, t_data **stack_b)
 {
 	int	number_of_nodes;
@@ -82,8 +97,13 @@ void	turk(t_data **stack_a, t_data **stack_b)
 
 void	sort(t_data **stack_a, t_data **stack_b)
 {
+	if (is_sorted(stack_a))
+	{
+		ft_putstr("Stack is sorted\n");
+		return ;
+	}
 	if (count_nodes(stack_a) > 1 && count_nodes(stack_a) <= 3)
 		sort_3(stack_a);
-	else
+	else if (count_nodes(stack_a) > 3)
 		turk(stack_a, stack_b);
 }

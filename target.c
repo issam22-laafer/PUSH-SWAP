@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:20:35 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 08:54:15 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 10:50:58 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	count_moves(int nb, int target, t_data **stack_a, t_data **stack_b)
 	return (moves(index_a, index_b, stack_a, stack_b));
 }
 
-void	get_index_push(t_data **stack_a, t_data **stack_b, t_elements *elements)
+void	push(t_data **stack_a, t_data **stack_b, t_elements *elements)
 {
 	t_data	*tmp_a;
 	t_data	*tmp_b;
@@ -94,6 +94,11 @@ void	get_index_push(t_data **stack_a, t_data **stack_b, t_elements *elements)
 		elements->index_t++;
 	}
 	push_to_b(stack_a, stack_b, elements);
+}
+
+void closest_smaller()
+{
+	
 }
 
 void	target_push(t_data **stack_a, t_data **stack_b)
@@ -129,7 +134,5 @@ void	target_push(t_data **stack_a, t_data **stack_b)
 		}
 		tmp_a = tmp_a->next;
 	}
-	printf("The number is %d : target => %d =>  MOves :%d\n", elements.element,
-		elements.target, number_moves);
-	get_index_push(stack_a, stack_b, &elements);
+	push(stack_a, stack_b, &elements);
 }
