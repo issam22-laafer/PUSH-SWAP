@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 09:23:05 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 12:19:40 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void			push_to_b(t_data **stack_a, t_data **stack_b,
 					t_elements *elements);
 int				min_index(int i, int j);
 int				max_index(int i, int j);
+int				find_first_target(int a, t_data **stack_b);
 
 #endif
