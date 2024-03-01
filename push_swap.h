@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/29 09:35:24 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 09:23:05 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ typedef struct node
 	int			data;
 	struct node	*next;
 }				t_data;
+
+typedef struct elements
+{
+	int			element;
+	int			target;
+	int			index_e;
+	int			index_t;
+}				t_elements;
 
 typedef struct numbers
 {
@@ -55,5 +63,9 @@ void			rrr(t_data **stack_a, t_data **stack_b);
 void			sort(t_data **satck_a, t_data **satck_b);
 void			target_push(t_data **stack_a, t_data **stack_b);
 int				the_big_n(t_data **stack);
+void			push_to_b(t_data **stack_a, t_data **stack_b,
+					t_elements *elements);
+int				min_index(int i, int j);
+int				max_index(int i, int j);
 
 #endif

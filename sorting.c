@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/29 15:43:08 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 08:37:31 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	turk(t_data **stack_a, t_data **stack_b)
 		target_push(stack_a, stack_b);
 		number_of_nodes--;
 	}
-	
 	sort_3(stack_a);
 }
 

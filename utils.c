@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 22:23:11 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/25 10:26:29 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 09:22:41 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	insert_back(t_data **head, int nb)
 
 int	count_nodes(t_data **stack)
 {
-	t_data *tmp;
-	int i;
+	t_data	*tmp;
+	int		i;
 
 	tmp = *stack;
 	i = 0;
@@ -56,4 +56,18 @@ int	count_nodes(t_data **stack)
 		tmp = tmp->next;
 	}
 	return (i);
+}
+
+int	min_index(int i, int j)
+{
+	if (i >= j)
+		return (j);
+	return (i);
+}
+
+int	max_index(int i, int j)
+{
+	if (i >= j)
+		return (i);
+	return (j);
 }
