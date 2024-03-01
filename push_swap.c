@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/29 15:24:53 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/01 18:57:02 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 			insert_back(stack_a, ft_atoi(the_numbers->numbers[i]));
 		else
 		{
+			freestack(stack_a);
 			ft_putstr("Error\n");
 			exit(1);
 		}
@@ -65,6 +66,8 @@ void	push_swap(t_numbers *the_numbers)
 		printf("==> %d\n", tmp->data);
 		tmp = tmp->next;
 	}
+	freestack(&stack_a);
+	freestack(&stack_b);
 }
 
 int	main(int ac, char **av)
