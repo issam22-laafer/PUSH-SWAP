@@ -12,21 +12,6 @@
 
 #include "push_swap.h"
 
-int	the_big_n(t_data **stack)
-{
-	t_data	*tmp;
-	int		the_big;
-
-	tmp = *stack;
-	the_big = tmp->data;
-	while (tmp)
-	{
-		if (tmp->data > the_big)
-			the_big = tmp->data;
-		tmp = tmp->next;
-	}
-	return (the_big);
-}
 
 void	sort_3(t_data **stack_a)
 {
@@ -89,10 +74,11 @@ void	turk(t_data **stack_a, t_data **stack_b)
 	number_of_nodes = count_nodes(stack_a);
 	while (number_of_nodes > 3)
 	{
-		target_push(stack_a, stack_b);
+		target_a_push(stack_a, stack_b);
 		number_of_nodes--;
 	}
 	sort_3(stack_a);
+	target_b_push(stack_b,stack_a);
 }
 
 void	sort(t_data **stack_a, t_data **stack_b)
@@ -107,3 +93,4 @@ void	sort(t_data **stack_a, t_data **stack_b)
 	else if (count_nodes(stack_a) > 3)
 		turk(stack_a, stack_b);
 }
+
