@@ -78,9 +78,47 @@ void	turk(t_data **stack_a, t_data **stack_b)
 		number_of_nodes--;
 	}
 	sort_3(stack_a);
-	target_b_push(stack_b,stack_a);
-}
+	//=========================================
 
+	number_of_nodes = count_nodes(stack_b);
+	while (number_of_nodes > 0)
+	{
+		target_b_push(stack_b,stack_a);
+		number_of_nodes--;
+	}
+	//=========================================
+		int min_stack;
+
+	min_stack = the_small_n(stack_a);
+	    t_data *tmp_ajj;
+    int ii;
+
+    tmp_ajj = *stack_a;
+    ii = 0;
+    while(tmp_ajj->data != min_stack)
+    {
+        ii++;
+        tmp_ajj = tmp_ajj->next;
+    }
+    if(ii <= count_nodes(stack_a)/2)
+    {
+        while(ii > 0)
+        {
+            rotate_a(stack_a);
+			ft_putstr("ra\n");
+            ii--;
+        }
+    }
+    else
+	{
+		while (ii < count_nodes(stack_a))
+		{
+			reverse_rotate_a(stack_a);
+			ft_putstr("rra\n");
+			ii++;
+		}
+	}
+}
 void	sort(t_data **stack_a, t_data **stack_b)
 {
 	if (is_sorted(stack_a))
