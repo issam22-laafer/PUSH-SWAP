@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 18:56:40 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/04 15:05:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,9 @@ void			push_to_b(t_data **stack_a, t_data **stack_b,
 int				min_index(int i, int j);
 int				max_index(int i, int j);
 int				find_first_target_a(int a, t_data **stack_b);
-int	find_first_target_b(int a, t_data **stack_a);
-int	the_small_n(t_data **stack);
-void	target_b_push(t_data **stack_b, t_data **stack_a);
-
-
+int				find_first_target_b(int a, t_data **stack_a);
+int				the_small_n(t_data **stack);
+void			target_b_push(t_data **stack_b, t_data **stack_a);
+void			check_min_position(t_data **stack_a);
 
 #endif

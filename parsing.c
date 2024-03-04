@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 18:58:53 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/04 15:03:55 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void creat_stack_a(t_numbers *the_numbers, t_data *head)
-// {
-//     head = malloc(sizeof(t_data));
-//     head->data = 15;
-// }
 
 int	if_number(char *str)
 {

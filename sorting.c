@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 10:26:47 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/04 14:57:28 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	sort_3(t_data **stack_a)
 {
@@ -54,7 +53,7 @@ int	is_sorted(t_data **stack_a)
 	return (1);
 }
 
-void	turk(t_data **stack_a, t_data **stack_b)
+void	check_args_for_turk(t_data **stack_a, t_data **stack_b)
 {
 	int	number_of_nodes;
 
@@ -71,6 +70,13 @@ void	turk(t_data **stack_a, t_data **stack_b)
 		push_b(stack_a, stack_b);
 		ft_putstr("pb\n");
 	}
+}
+
+void	turk(t_data **stack_a, t_data **stack_b)
+{
+	int	number_of_nodes;
+
+	check_args_for_turk(stack_a, stack_b);
 	number_of_nodes = count_nodes(stack_a);
 	while (number_of_nodes > 3)
 	{
@@ -78,46 +84,13 @@ void	turk(t_data **stack_a, t_data **stack_b)
 		number_of_nodes--;
 	}
 	sort_3(stack_a);
-	//=========================================
-
 	number_of_nodes = count_nodes(stack_b);
 	while (number_of_nodes > 0)
 	{
-		target_b_push(stack_b,stack_a);
+		target_b_push(stack_b, stack_a);
 		number_of_nodes--;
 	}
-	//=========================================
-		int min_stack;
-
-	min_stack = the_small_n(stack_a);
-	    t_data *tmp_ajj;
-    int ii;
-
-    tmp_ajj = *stack_a;
-    ii = 0;
-    while(tmp_ajj->data != min_stack)
-    {
-        ii++;
-        tmp_ajj = tmp_ajj->next;
-    }
-    if(ii <= count_nodes(stack_a)/2)
-    {
-        while(ii > 0)
-        {
-            rotate_a(stack_a);
-			ft_putstr("ra\n");
-            ii--;
-        }
-    }
-    else
-	{
-		while (ii < count_nodes(stack_a))
-		{
-			reverse_rotate_a(stack_a);
-			ft_putstr("rra\n");
-			ii++;
-		}
-	}
+	check_min_position(stack_a);
 }
 void	sort(t_data **stack_a, t_data **stack_b)
 {
@@ -131,4 +104,3 @@ void	sort(t_data **stack_a, t_data **stack_b)
 	else if (count_nodes(stack_a) > 3)
 		turk(stack_a, stack_b);
 }
-
