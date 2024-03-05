@@ -12,10 +12,10 @@
 
 #include "../push_swap.h"
 
-int	result(char *str, int i, int s)
+long long result(char *str, int i)
 {
-	int			r;
-	long long	d;
+	int r;
+	long long d;
 
 	r = 0;
 	d = 0;
@@ -25,19 +25,24 @@ int	result(char *str, int i, int s)
 		d = (d * 10) + (str[i] - '0');
 		i++;
 	}
-	d = d * s;
-	if (d > INT_MAX || d < INT_MIN)
-	{
-		ft_putstr("Eroor");
-		exit(1);
-	}
-	return (r * s);
+	// d = d * s;
+	// if (d > INT_MAX || d < INT_MIN)
+	// {
+	// 	ft_putstr("Eroor\n");
+	// 	i = 0;
+	// 	while (the_numbers->numbers[i])
+	// 		free(the_numbers->numbers[i++]);
+	// 	free(the_numbers->numbers);
+	// 	exit(1);
+	// }
+	return (d);
 }
 
-int	ft_atoi(char *str)
+int ft_atoi(char *str, t_numbers *the_numbers,t_data **stack_a)
 {
-	int	i;
-	int	s;
+	int i;
+	int s;
+	long long d;
 
 	i = 0;
 	s = 1;
@@ -49,5 +54,16 @@ int	ft_atoi(char *str)
 			s = s * -1;
 		i++;
 	}
-	return (result(str, i, s));
+	d = result(str, i) * s;
+	if (d > INT_MAX || d < INT_MIN)
+	{
+		ft_putstr("Eroor\n");
+		i = 0;
+		while (the_numbers->numbers[i])
+			free(the_numbers->numbers[i++]);
+		free(the_numbers->numbers);
+		freestack(stack_a);
+		exit(1);
+	}
+	return (result(str, i) * s);
 }

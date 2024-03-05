@@ -17,6 +17,8 @@ int	if_number(char *str)
 	int	i;
 
 	i = 0;
+	if (ft_strlen(str) > 11)
+		return (0);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
@@ -28,10 +30,11 @@ int	if_number(char *str)
 	return (1);
 }
 
-void	check_doubles(t_data **stack_a)
+void	check_doubles(t_data **stack_a, t_numbers *the_numbers)
 {
 	t_data	*temp1;
 	t_data	*temp2;
+	int		j;
 
 	temp1 = *stack_a;
 	while (temp1)
@@ -43,6 +46,10 @@ void	check_doubles(t_data **stack_a)
 			{
 				ft_putstr("Eroor\n");
 				freestack(stack_a);
+				j = 0;
+				while (the_numbers->numbers[j])
+					free(the_numbers->numbers[j++]);
+				free(the_numbers->numbers);
 				exit(1);
 			}
 			temp2 = temp2->next;

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: codespace <lissam@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
 /*   Updated: 2024/03/04 14:57:28 by codespace        ###   ########.fr       */
@@ -92,6 +92,7 @@ void	turk(t_data **stack_a, t_data **stack_b)
 	}
 	check_min_position(stack_a);
 }
+
 void	sort(t_data **stack_a, t_data **stack_b)
 {
 	if (is_sorted(stack_a))

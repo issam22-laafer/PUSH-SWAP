@@ -14,26 +14,54 @@
 
 void	get_numbers(int ac, char **av, t_numbers *the_numbers)
 {
-	if (ac == 2)
+	int		i;
+	int		j;
+	char	**tmp;
+	char	*tmp2;
+
+	i = 1;
+	tmp2 = NULL;
+	while (i < ac)
 	{
-		the_numbers->numbers = ft_split(av[1], ' ');
+		j = 0;
+		tmp = ft_split(av[i], ' ');
+		while (tmp[j])
+		{
+			tmp2 = ft_strjoin(tmp2, " ");
+			tmp2 = ft_strjoin(tmp2, tmp[j]);
+			j++;
+		}
+		j = 0;
+		while (tmp[j])
+			free(tmp[j++]);
+		free(tmp);
+		i++;
 	}
-	else
-		the_numbers->numbers = av + 1;
+	the_numbers->numbers = ft_split(tmp2, ' ');
+	free(tmp2);
 }
 
 void	fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 {
 	int	i;
+	int	j;
 
 	i = 0;
 	while (the_numbers->numbers[i])
 	{
 		if (if_number(the_numbers->numbers[i]))
-			insert_back(stack_a, ft_atoi(the_numbers->numbers[i]));
+			insert_back(stack_a, ft_atoi(the_numbers->numbers[i], the_numbers,
+					stack_a));
 		else
 		{
 			freestack(stack_a);
+			j = 0;
+			while (the_numbers->numbers[j])
+			{
+				free(the_numbers->numbers[j]);
+				j++;
+			}
+			free(the_numbers->numbers);
 			ft_putstr("Error\n");
 			exit(1);
 		}
@@ -45,27 +73,27 @@ void	push_swap(t_numbers *the_numbers)
 {
 	t_data	*stack_a;
 	t_data	*stack_b;
+	t_data	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	fill_stack_a(the_numbers, &stack_a);
-	check_doubles(&stack_a);
+	check_doubles(&stack_a, the_numbers);
 	sort(&stack_a, &stack_b);
-	// t_data	*tmp;
-	// printf("===========Stack A==========\n");
-	// tmp = stack_a;
-	// while (tmp)
-	// {
-	// 	printf("==> %d\n", tmp->data);
-	// 	tmp = tmp->next;
-	// }
-	// printf("===========Stack B==========\n");
-	// tmp = stack_b;
-	// while (tmp)
-	// {
-	// 	printf("==> %d\n", tmp->data);
-	// 	tmp = tmp->next;
-	// }
+	printf("===========Stack A==========\n");
+	tmp = stack_a;
+	while (tmp)
+	{
+		printf("==> %d\n", tmp->data);
+		tmp = tmp->next;
+	}
+	printf("===========Stack B==========\n");
+	tmp = stack_b;
+	while (tmp)
+	{
+		printf("==> %d\n", tmp->data);
+		tmp = tmp->next;
+	}
 	freestack(&stack_a);
 	freestack(&stack_b);
 }
@@ -73,9 +101,17 @@ void	push_swap(t_numbers *the_numbers)
 int	main(int ac, char **av)
 {
 	t_numbers	the_numbers;
+	int			j;
 
+	j = 0;
 	the_numbers.argc_number = ac;
 	check_n_args(ac, av);
 	get_numbers(ac, av, &the_numbers);
 	push_swap(&the_numbers);
+	while (the_numbers.numbers[j])
+	{
+		free(the_numbers.numbers[j]);
+		j++;
+	}
+	free(the_numbers.numbers);
 }

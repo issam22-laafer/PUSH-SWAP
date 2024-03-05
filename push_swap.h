@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: codespace <lissam@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/04 15:05:05 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/04 15:05:05 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ size_t			ft_strlen(const char *str);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			insert_back(t_data **head, int nb);
 int				if_number(char *str);
-int				ft_atoi(char *str);
-void			check_doubles(t_data **stack_a);
+int	ft_atoi(char *str,t_numbers *the_numbers,t_data **stack_a);
+void	check_doubles(t_data **stack_a,t_numbers *the_numbers);
 int				count_nodes(t_data **stack);
 void			swap_a(t_data **stack_a);
 void			rotate_a(t_data **stack_a);
@@ -72,5 +72,9 @@ int				find_first_target_b(int a, t_data **stack_a);
 int				the_small_n(t_data **stack);
 void			target_b_push(t_data **stack_b, t_data **stack_a);
 void			check_min_position(t_data **stack_a);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *src);
+
+
 
 #endif
