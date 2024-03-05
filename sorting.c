@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <lissam@student.42.fr>           +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:25:47 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/04 14:57:28 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/05 10:40:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	sort(t_data **stack_a, t_data **stack_b)
 {
 	if (is_sorted(stack_a))
 	{
-		ft_putstr("Stack is sorted\n");
+		ft_putstr("\n");
 		return ;
 	}
 	if (count_nodes(stack_a) > 1 && count_nodes(stack_a) <= 3)

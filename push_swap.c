@@ -73,27 +73,12 @@ void	push_swap(t_numbers *the_numbers)
 {
 	t_data	*stack_a;
 	t_data	*stack_b;
-	t_data	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a, the_numbers);
 	sort(&stack_a, &stack_b);
-	printf("===========Stack A==========\n");
-	tmp = stack_a;
-	while (tmp)
-	{
-		printf("==> %d\n", tmp->data);
-		tmp = tmp->next;
-	}
-	printf("===========Stack B==========\n");
-	tmp = stack_b;
-	while (tmp)
-	{
-		printf("==> %d\n", tmp->data);
-		tmp = tmp->next;
-	}
 	freestack(&stack_a);
 	freestack(&stack_b);
 }
