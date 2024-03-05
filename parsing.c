@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/04 15:03:55 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/05 21:38:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	if_number(char *str)
 	int	i;
 
 	i = 0;
+	if (ft_strlen(str) == 1 && (str[i] == '-' || str[i] == '+'))
+		return (0);
 	if (ft_strlen(str) > 11)
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
