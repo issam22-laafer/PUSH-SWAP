@@ -6,20 +6,34 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/05 21:38:11 by marvin           ###   ########.fr       */
+/*   Updated: 2024/03/06 07:38:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_lenght(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] == '0')
+		i++;
+	if (ft_strlen(str + i) > 11)
+		return (0);
+	return (1);
+}
 
 int	if_number(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (ft_strlen(str) == 1 && (str[i] == '-' || str[i] == '+'))
+	if (!check_lenght(str))
 		return (0);
-	if (ft_strlen(str) > 11)
+	if (ft_strlen(str) == 1 && (str[i] == '-' || str[i] == '+'))
 		return (0);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
