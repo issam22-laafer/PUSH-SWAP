@@ -39,10 +39,9 @@ void	instruction_rr(t_data **stack_a, t_data **stack_b, char *line)
 		rrr(stack_a, stack_b);
 }
 
-void ft_free(t_data **stack_a, t_data **stack_b, char *line)
+void ft_free(t_data **stack_a, t_data **stack_b)
 {
         ft_putstr("Error\n");
-        free(line);
         freestack(stack_a);
         freestack(stack_b);
         exit(1);
@@ -66,9 +65,11 @@ void	instruction(t_data **stack_a, t_data **stack_b)
 			|| ft_strcmp(line, "rrr\n") == 0)
 			instruction_rr(stack_a, stack_b, line);
 		else
-			ft_free(stack_a, stack_b, line);
+                {
+                        free(line);
+			ft_free(stack_a, stack_b);
+                }
 		free(line);
 		line = get_next_line(0);
 	}
-	free(line);
 }

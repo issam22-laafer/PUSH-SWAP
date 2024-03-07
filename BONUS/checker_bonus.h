@@ -15,7 +15,6 @@ typedef struct node
 typedef struct numbers
 {
 	char		**numbers;
-	int			argc_number;
 }				t_numbers;
 
 int				check_lenght(char *str);
