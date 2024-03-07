@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "../checker_bonus.h"
+#include "get_next_line.h"
+
 char	*all_buffer(int fd, char *str)
 {
 	char	*buffer;

@@ -1,18 +1,17 @@
 
 #include "checker_bonus.h"
 
-
-void free_nbrs(t_numbers *the_numbers)
+void	free_nbrs(t_numbers *the_numbers)
 {
-        int i;
+	int	i;
 
-        i = 0;
-        while (the_numbers->numbers[i])
-        {
-                free(the_numbers->numbers[i]);
-                i++;
-        }
-        free(the_numbers->numbers);
+	i = 0;
+	while (the_numbers->numbers[i])
+	{
+		free(the_numbers->numbers[i]);
+		i++;
+	}
+	free(the_numbers->numbers);
 }
 
 void	freestack(t_data **my_stack)

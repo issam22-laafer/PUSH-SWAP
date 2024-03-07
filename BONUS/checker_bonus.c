@@ -1,7 +1,6 @@
 
 #include "checker_bonus.h"
 
-
 void	get_numbers(int ac, char **av, t_numbers *the_numbers)
 {
 	int		i;
@@ -29,6 +28,21 @@ void	get_numbers(int ac, char **av, t_numbers *the_numbers)
 	}
 	the_numbers->numbers = ft_split(tmp2, ' ');
 	free(tmp2);
+}
+
+int	is_sorted(t_data **stack_a)
+{
+	t_data	*tmp;
+
+	tmp = *stack_a;
+	while (tmp && tmp->next)
+	{
+		if (tmp->data < tmp->next->data)
+			tmp = tmp->next;
+		else
+			return (0);
+	}
+	return (1);
 }
 
 void	fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
@@ -63,21 +77,10 @@ void	checker(t_numbers *the_numbers)
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a);
 	instruction(&stack_a, &stack_b);
-	t_data	*tmp;
-	printf("===========Stack A==========\n");
-	tmp = stack_a;
-	while (tmp)
-	{
-		printf("==> %d\n", tmp->data);
-		tmp = tmp->next;
-	}
-	printf("===========Stack B==========\n");
-	tmp = stack_b;
-	while (tmp)
-	{
-		printf("==> %d\n", tmp->data);
-		tmp = tmp->next;
-	}
+	if (is_sorted(&stack_a) && count_nodes(&stack_b) == 0)
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
 	freestack(&stack_a);
 	freestack(&stack_b);
 }
