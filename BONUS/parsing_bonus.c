@@ -1,4 +1,3 @@
-
 #include "checker_bonus.h"
 
 int	check_lenght(char *str)

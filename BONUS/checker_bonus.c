@@ -1,4 +1,3 @@
-
 #include "checker_bonus.h"
 
 void	get_numbers(int ac, char **av, t_numbers *the_numbers)

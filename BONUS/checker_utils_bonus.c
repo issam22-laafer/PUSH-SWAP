@@ -1,4 +1,3 @@
-
 #include "checker_bonus.h"
 
 void	insert_back(t_data **head, int nb)

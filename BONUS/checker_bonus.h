@@ -1,5 +1,3 @@
-
-
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
@@ -14,7 +12,6 @@ typedef struct node
 	int			data;
 	struct node	*next;
 }				t_data;
-
 typedef struct numbers
 {
 	char		**numbers;
@@ -49,5 +46,6 @@ void			push_a(t_data **stack_b, t_data **stack_a);
 void			ss(t_data **stack_a, t_data **stack_b);
 void			rr(t_data **stack_a, t_data **stack_b);
 void			rrr(t_data **stack_a, t_data **stack_b);
+int				ft_strcmp(char *s1, char *s2);
 
 #endif
