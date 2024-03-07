@@ -1,11 +1,8 @@
 {
   "files.associations": {
-    "string.h": "c",
-    "unistd.h": "c",
-    "stdlib.h": "c",
-    "stdio.h": "c",
+    "checker_bonus.h": "c",
     "push_swap.h": "c",
-    "push_to_B.C": "cpp"
+    "get_next_line.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

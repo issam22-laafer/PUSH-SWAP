@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
 void	free_and_exit(t_numbers *the_numbers, t_data **stack_a)
 {
