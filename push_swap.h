@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <lissam@student.42.fr>           +#+  +:+       +#+        */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/04 15:05:05 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/08 19:09:56 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void			target_b_push(t_data **stack_b, t_data **stack_a);
 void			check_min_position(t_data **stack_a);
 char			*ft_strjoin(char *s1, char *s2);
 char			*ft_strdup(char *src);
+void			free_exit(char **tmp, char *tmp2);
 
 #endif

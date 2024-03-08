@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 18:07:09 by lissam            #+#    #+#             */
+/*   Updated: 2024/03/08 19:07:51 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
@@ -46,5 +58,7 @@ void			ss(t_data **stack_a, t_data **stack_b);
 void			rr(t_data **stack_a, t_data **stack_b);
 void			rrr(t_data **stack_a, t_data **stack_b);
 int				ft_strcmp(char *s1, char *s2);
+void			ft_free(t_data **stack_a, t_data **stack_b);
+void			free_exit(char **tmp, char *tmp2);
 
 #endif

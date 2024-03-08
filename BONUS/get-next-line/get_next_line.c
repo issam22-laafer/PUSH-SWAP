@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:18:44 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/07 20:21:26 by marvin           ###   ########.fr       */
+/*   Updated: 2024/03/08 18:12:08 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ char	*get_next_line(int fd)
 	if (!str)
 		return (NULL);
 	s = show_line(str);
-	str = rest(str);
+	free(str);
+	str = NULL;
 	return (s);
 }

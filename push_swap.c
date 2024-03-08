@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/06 07:44:45 by marvin           ###   ########.fr       */
+/*   Updated: 2024/03/08 19:11:31 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void	get_numbers(int ac, char **av, t_numbers *the_numbers)
 	{
 		j = 0;
 		tmp = ft_split(av[i], ' ');
+		if (!tmp[0])
+			free_exit(tmp, tmp2);
 		while (tmp[j])
 		{
 			tmp2 = ft_strjoin(tmp2, " ");
-			tmp2 = ft_strjoin(tmp2, tmp[j]);
-			j++;
+			tmp2 = ft_strjoin(tmp2, tmp[j++]);
 		}
 		j = 0;
 		while (tmp[j])
 			free(tmp[j++]);
-		free(tmp);
-		i++;
+		(free(tmp), i++);
 	}
 	the_numbers->numbers = ft_split(tmp2, ' ');
 	free(tmp2);
@@ -79,21 +79,6 @@ void	push_swap(t_numbers *the_numbers)
 	fill_stack_a(the_numbers, &stack_a);
 	check_doubles(&stack_a, the_numbers);
 	sort(&stack_a, &stack_b);
-	// t_data	*tmp;
-	// printf("===========Stack A==========\n");
-	// tmp = stack_a;
-	// while (tmp)
-	// {
-	// 	printf("==> %d\n", tmp->data);
-	// 	tmp = tmp->next;
-	// }
-	// printf("===========Stack B==========\n");
-	// tmp = stack_b;
-	// while (tmp)
-	// {
-	// 	printf("==> %d\n", tmp->data);
-	// 	tmp = tmp->next;
-	// }
 	freestack(&stack_a);
 	freestack(&stack_b);
 }

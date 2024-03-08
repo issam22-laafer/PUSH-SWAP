@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:30:31 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/05 21:41:35 by marvin           ###   ########.fr       */
+/*   Updated: 2024/03/08 18:42:28 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_n_args(int ac, char **av)
 	}
 	if (!av[1][0])
 	{
-		ft_putstr("Eroor\n");
+		ft_putstr("Error\n");
 		exit(1);
 	}
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   instruction_bonus.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 18:07:22 by lissam            #+#    #+#             */
+/*   Updated: 2024/03/08 18:08:23 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./get-next-line/get_next_line.h"
 #include "checker_bonus.h"
 
@@ -39,13 +51,6 @@ void	instruction_rr(t_data **stack_a, t_data **stack_b, char *line)
 		rrr(stack_a, stack_b);
 }
 
-void ft_free(t_data **stack_a, t_data **stack_b)
-{
-        ft_putstr("Error\n");
-        freestack(stack_a);
-        freestack(stack_b);
-        exit(1);
-}
 void	instruction(t_data **stack_a, t_data **stack_b)
 {
 	char	*line;
@@ -65,10 +70,10 @@ void	instruction(t_data **stack_a, t_data **stack_b)
 			|| ft_strcmp(line, "rrr\n") == 0)
 			instruction_rr(stack_a, stack_b, line);
 		else
-                {
-                        free(line);
+		{
+			free(line);
 			ft_free(stack_a, stack_b);
-                }
+		}
 		free(line);
 		line = get_next_line(0);
 	}

@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:45:55 by lissam            #+#    #+#             */
-/*   Updated: 2024/02/29 11:17:19 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/08 18:43:17 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_atoi(char *str, t_numbers *the_numbers, t_data **stack_a)
 	d = result(str, i) * s;
 	if (d > INT_MAX || d < INT_MIN)
 	{
-		ft_putstr("Eroor\n");
+		ft_putstr("Error\n");
 		free_and_exit(the_numbers, stack_a);
 	}
 	return (result(str, i) * s);

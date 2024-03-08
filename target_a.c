@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:20:35 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/01 12:19:21 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/08 16:37:15 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	target_a_push(t_data **stack_a, t_data **stack_b)
 	t_elements	elements;
 
 	tmp_a = *stack_a;
-	number_moves = 500;
+	number_moves = INT_MAX;
 	while (tmp_a)
 	{
 		if (find_first_target_a(tmp_a->data, stack_b) == the_big_n(stack_b))

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 18:07:00 by lissam            #+#    #+#             */
+/*   Updated: 2024/03/08 19:07:23 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 void	get_numbers(int ac, char **av, t_numbers *the_numbers)
@@ -13,17 +25,17 @@ void	get_numbers(int ac, char **av, t_numbers *the_numbers)
 	{
 		j = 0;
 		tmp = ft_split(av[i], ' ');
+		if (!tmp[0])
+			free_exit(tmp, tmp2);
 		while (tmp[j])
 		{
 			tmp2 = ft_strjoin(tmp2, " ");
-			tmp2 = ft_strjoin(tmp2, tmp[j]);
-			j++;
+			tmp2 = ft_strjoin(tmp2, tmp[j++]);
 		}
 		j = 0;
 		while (tmp[j])
 			free(tmp[j++]);
-		free(tmp);
-		i++;
+		(free(tmp), i++);
 	}
 	the_numbers->numbers = ft_split(tmp2, ' ');
 	free(tmp2);

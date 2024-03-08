@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/06 07:38:00 by marvin           ###   ########.fr       */
+/*   Updated: 2024/03/08 19:10:18 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	check_doubles(t_data **stack_a, t_numbers *the_numbers)
 		{
 			if (temp1->data == temp2->data)
 			{
-				ft_putstr("Eroor\n");
+				ft_putstr("Error\n");
 				freestack(stack_a);
 				j = 0;
 				while (the_numbers->numbers[j])
@@ -72,4 +72,17 @@ void	check_doubles(t_data **stack_a, t_numbers *the_numbers)
 		}
 		temp1 = temp1->next;
 	}
+}
+
+void	free_exit(char **tmp, char *tmp2)
+{
+	int	j;
+
+	ft_putstr("Error\n");
+	j = 0;
+	while (tmp[j])
+		free(tmp[j++]);
+	free(tmp);
+	free(tmp2);
+	exit(1);
 }

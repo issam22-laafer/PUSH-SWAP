@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils1_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 18:07:40 by lissam            #+#    #+#             */
+/*   Updated: 2024/03/08 19:07:33 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 void	free_nbrs(t_numbers *the_numbers)
@@ -37,4 +49,25 @@ int	ft_strcmp(char *s1, char *s2)
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
 	return (s1[i] - s2[i]);
+}
+
+void	ft_free(t_data **stack_a, t_data **stack_b)
+{
+	ft_putstr("Error\n");
+	freestack(stack_a);
+	freestack(stack_b);
+	exit(1);
+}
+
+void	free_exit(char **tmp, char *tmp2)
+{
+	int	j;
+
+	ft_putstr("Error\n");
+	j = 0;
+	while (tmp[j])
+		free(tmp[j++]);
+	free(tmp);
+	free(tmp2);
+	exit(1);
 }

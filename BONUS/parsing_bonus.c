@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 18:07:37 by lissam            #+#    #+#             */
+/*   Updated: 2024/03/08 18:43:02 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 int	check_lenght(char *str)
@@ -47,7 +59,7 @@ void	check_doubles(t_data **stack_a)
 		{
 			if (temp1->data == temp2->data)
 			{
-				ft_putstr("Eroor\n");
+				ft_putstr("Error\n");
 				freestack(stack_a);
 				exit(1);
 			}

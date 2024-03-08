@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_utils_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 18:07:14 by lissam            #+#    #+#             */
+/*   Updated: 2024/03/08 18:43:10 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker_bonus.h"
 
 void	insert_back(t_data **head, int nb)
@@ -44,7 +56,7 @@ void	check_n_args(int ac, char **av)
 	}
 	if (!av[1][0])
 	{
-		ft_putstr("Eroor\n");
+		ft_putstr("Error\n");
 		exit(1);
 	}
 }
