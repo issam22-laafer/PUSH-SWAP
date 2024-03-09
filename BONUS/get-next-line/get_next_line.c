@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:18:44 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 21:45:44 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 22:00:51 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,11 @@ char	*get_next_line(int fd)
 	static char	*str;
 	char		*s;
 
+	if (fd == -100)
+	{
+		free(str);
+		return (NULL);
+	}
 	if (BUFFER_SIZE <= 0 || fd < 0 || BUFFER_SIZE >= 2147483647)
 		return (NULL);
 	str = all_buffer(fd, str);

@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:40 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 21:47:47 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 22:02:10 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,12 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	ft_free(t_data **stack_a, t_data **stack_b)
+void	ft_free(t_data **stack_a, t_data **stack_b, char *line)
 {
 	ft_putstr2("Error\n");
 	freestack(stack_a);
 	freestack(stack_b);
+	free(line);
 }
 
 void	free_exit(char **tmp, char *tmp2)

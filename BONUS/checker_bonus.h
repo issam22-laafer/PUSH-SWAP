@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:09 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 21:46:06 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 22:02:31 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ typedef struct numbers
 {
 	char		**numbers;
 }				t_numbers;
-
-
 
 int				check_lenght(char *str);
 int				if_number(char *str);
@@ -61,7 +59,8 @@ void			ss(t_data **stack_a, t_data **stack_b);
 void			rr(t_data **stack_a, t_data **stack_b);
 void			rrr(t_data **stack_a, t_data **stack_b);
 int				ft_strcmp(char *s1, char *s2);
-void			ft_free(t_data **stack_a, t_data **stack_b);
+void			ft_free(t_data **stack_a, t_data **stack_b, char *line);
+
 void			free_exit(char **tmp, char *tmp2);
 
 #endif
