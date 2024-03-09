@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:20:35 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 16:37:15 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 16:10:13 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,105 @@
 
 int	moves(int index_a, int index_b, t_data **stack_a, t_data **stack_b)
 {
-	int	nb_nodes_a;
-	int	nb_nodes_b;
-	int	nb_moves_a;
-	int	nb_moves_b;
-
-	nb_nodes_a = count_nodes(stack_a);
-	nb_nodes_b = count_nodes(stack_b);
-	if (index_a <= nb_nodes_a / 2)
-		nb_moves_a = index_a;
+	// int	nb_nodes_a;
+	// int	nb_nodes_b;
+	// int	nb_moves_a;
+	// int	nb_moves_b;
+	int	nb_moves;
+	int max;
+	int min;
+	
+	nb_moves = 0;
+	// nb_nodes_a = count_nodes(stack_a);
+	// nb_nodes_b = count_nodes(stack_b);
+	// if (index_a <= nb_nodes_a / 2)
+	// 	nb_moves_a = index_a;
+	// else
+	// 	nb_moves_a = nb_nodes_a - index_a;
+	// if (index_b <= nb_nodes_b / 2)
+	// 	nb_moves_b = index_b;
+	// else
+	// 	nb_moves_b = nb_nodes_b - index_b;
+	// return (nb_moves_a + nb_moves_b);
+	
+	if(index_a <= count_nodes(stack_a) / 2 && index_b <= count_nodes(stack_b) / 2 )
+	{
+		min =  min_index(index_a,index_b);
+		while (min > 0)
+		{
+			nb_moves++;
+			index_a--;
+			index_b--;
+			min--;
+		}
+		while (index_a > 0)
+		{
+			nb_moves++;
+			index_a--;
+		}
+		while (index_b > 0)
+		{
+			nb_moves++;
+			index_b--;
+		}
+	}
+	else if (index_a > count_nodes(stack_a) / 2 && index_b > count_nodes(stack_b) / 2)
+	{
+		max = max_index(index_a,index_b);
+		while (max < count_nodes(stack_a) && max < count_nodes(stack_b))
+		{
+			max++;
+			index_a++;
+			index_b++;
+			nb_moves++;
+		}
+		while (index_b < count_nodes(stack_b))
+		{
+			nb_moves++;
+			index_b++;
+		}
+		while (index_a < count_nodes(stack_a))
+		{
+			nb_moves++;
+			index_a++;
+		}
+	}
 	else
-		nb_moves_a = nb_nodes_a - index_a;
-	if (index_b <= nb_nodes_b / 2)
-		nb_moves_b = index_b;
-	else
-		nb_moves_b = nb_nodes_b - index_b;
-	return (nb_moves_a + nb_moves_b);
+	{
+		if (index_a <= count_nodes(stack_a) / 2)
+		{
+			while (index_a > 0)
+			{
+				nb_moves++;
+				index_a--;
+			}
+		}
+		else
+		{
+			while (index_a < count_nodes(stack_a))
+			{
+				nb_moves++;
+				index_a++;
+			}
+		}
+		if (index_b <= count_nodes(stack_b) / 2)
+		{
+			while (index_b > 0)
+			{
+				nb_moves++;
+				index_b--;
+			}
+		}
+		else
+		{
+			while (index_b < count_nodes(stack_b))
+			{
+				nb_moves++;
+				index_b++;
+			}
+		}
+	}
+	return nb_moves;
 }
 
 int	count_moves(int nb, int target, t_data **stack_a, t_data **stack_b)
