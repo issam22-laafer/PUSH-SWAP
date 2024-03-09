@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 08:24:45 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 16:49:36 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ void			push_to_b(t_data **stack_a, t_data **stack_b,
 					t_elements *elements);
 int				min_index(int i, int j);
 int				max_index(int i, int j);
+int				count_moves_top(int index_a, int index_b);
+int				count_moves_bottom(int index_a, int index_b, t_data **stack_a,
+					t_data **stack_b);
+int				count_moves_a(int index_a, t_data **stack_a);
+int				count_moves_b(int index_b, t_data **stack_b);
+int				count_moves_both(int index_a, int index_b, t_data **stack_a,
+					t_data **stack_b);
 int				find_first_target_a(int a, t_data **stack_b);
 int				find_first_target_b(int a, t_data **stack_a);
 int				the_small_n(t_data **stack);
