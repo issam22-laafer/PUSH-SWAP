@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:00 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 19:07:23 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:26:18 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 		{
 			freestack(stack_a);
 			free_nbrs(the_numbers);
-			ft_putstr("Error\n");
+			ft_putstr2("Error\n");
 			exit(1);
 		}
 		i++;

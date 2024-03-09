@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:37 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 18:43:02 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:26:26 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	check_doubles(t_data **stack_a)
 		{
 			if (temp1->data == temp2->data)
 			{
-				ft_putstr("Error\n");
+				ft_putstr2("Error\n");
 				freestack(stack_a);
 				exit(1);
 			}

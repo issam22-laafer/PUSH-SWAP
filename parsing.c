@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 08:49:28 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 19:10:18 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:26:03 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	check_doubles(t_data **stack_a, t_numbers *the_numbers)
 		{
 			if (temp1->data == temp2->data)
 			{
-				ft_putstr("Error\n");
+				ft_putstr2("Error\n");
 				freestack(stack_a);
 				j = 0;
 				while (the_numbers->numbers[j])
@@ -78,7 +78,7 @@ void	free_exit(char **tmp, char *tmp2)
 {
 	int	j;
 
-	ft_putstr("Error\n");
+	ft_putstr2("Error\n");
 	j = 0;
 	while (tmp[j])
 		free(tmp[j++]);

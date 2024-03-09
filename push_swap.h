@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:16 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 19:09:56 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:24:45 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct numbers
 }				t_numbers;
 void			freestack(t_data **my_stack);
 void			ft_putstr(char *str);
+void			ft_putstr2(char *str);
 void			check_n_args(int ac, char **av);
 char			**ft_split(char const *s, char c);
 size_t			ft_strlen(const char *str);

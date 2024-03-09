@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:09 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 19:07:51 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:25:21 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int				count_nodes(t_data **stack);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			check_n_args(int ac, char **av);
 void			ft_putstr(char *str);
+void			ft_putstr2(char *str);
 char			*get_next_line(int fd);
 void			instruction(t_data **stack_a, t_data **stack_b);
 void			swap_a(t_data **stack_a);

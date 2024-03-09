@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:30:31 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 18:42:28 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:25:50 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_n_args(int ac, char **av)
 	}
 	if (!av[1][0])
 	{
-		ft_putstr("Error\n");
+		ft_putstr2("Error\n");
 		exit(1);
 	}
 }

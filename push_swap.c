@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:26:57 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 19:11:31 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 08:26:15 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	fill_stack_a(t_numbers *the_numbers, t_data **stack_a)
 				j++;
 			}
 			free(the_numbers->numbers);
-			ft_putstr("Error\n");
+			ft_putstr2("Error\n");
 			exit(1);
 		}
 		i++;
