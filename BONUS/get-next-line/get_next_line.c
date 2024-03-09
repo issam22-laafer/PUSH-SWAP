@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:18:44 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 18:12:08 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 21:45:44 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ char	*get_next_line(int fd)
 	if (!str)
 		return (NULL);
 	s = show_line(str);
-	free(str);
-	str = NULL;
+	str = rest(str);
 	return (s);
 }

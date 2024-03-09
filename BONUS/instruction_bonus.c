@@ -6,13 +6,13 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:22 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 18:08:23 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 21:16:04 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./get-next-line/get_next_line.h"
 #include "checker_bonus.h"
-
+#include "fcntl.h"
 void	instruction_s(t_data **stack_a, t_data **stack_b, char *line)
 {
 	if (ft_strcmp(line, "sa\n") == 0)
@@ -71,8 +71,9 @@ void	instruction(t_data **stack_a, t_data **stack_b)
 			instruction_rr(stack_a, stack_b, line);
 		else
 		{
-			free(line);
 			ft_free(stack_a, stack_b);
+			free(line);
+			exit(1);
 		}
 		free(line);
 		line = get_next_line(0);

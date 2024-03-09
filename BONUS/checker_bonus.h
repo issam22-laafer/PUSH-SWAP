@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:09 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 08:25:21 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 21:46:06 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct numbers
 {
 	char		**numbers;
 }				t_numbers;
+
+
 
 int				check_lenght(char *str);
 int				if_number(char *str);

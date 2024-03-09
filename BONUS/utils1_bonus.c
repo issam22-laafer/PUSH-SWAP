@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 18:07:40 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 08:26:34 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/09 21:47:47 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	ft_free(t_data **stack_a, t_data **stack_b)
 	ft_putstr2("Error\n");
 	freestack(stack_a);
 	freestack(stack_b);
-	exit(1);
 }
 
 void	free_exit(char **tmp, char *tmp2)
