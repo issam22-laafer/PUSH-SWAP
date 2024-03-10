@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 08:50:14 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/08 16:25:48 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/10 10:37:30 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void	do_rotate_both(t_data **stack_a, t_data **stack_b, int i, int j)
 
 void	do_reverse_rotate_both(t_data **stack_a, t_data **stack_b, int i, int j)
 {
-	int	max;
+	int	min;
 
-	max = max_index(i, j);
-	while (max < count_nodes(stack_a) && max < count_nodes(stack_b))
+	min = min_index(i, j);
+	while (i < count_nodes(stack_a) && j < count_nodes(stack_b))
 	{
 		rrr(stack_a, stack_b);
 		ft_putstr("rrr\n");
-		max++;
+		min++;
 		i++;
 		j++;
 	}

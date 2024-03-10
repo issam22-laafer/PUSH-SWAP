@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:46:17 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/09 16:47:17 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/10 10:04:44 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int	count_moves_bottom(int index_a, int index_b, t_data **stack_a,
 		t_data **stack_b)
 {
 	int	nb_moves;
-	int	max;
+	int	min;
 
 	nb_moves = 0;
-	max = max_index(index_a, index_b);
-	while (max < count_nodes(stack_a) && max < count_nodes(stack_b))
+	min = min_index(index_a, index_b);
+	while (index_a < count_nodes(stack_a) && index_b < count_nodes(stack_b))
 	{
-		max++;
+		min++;
 		index_a++;
 		index_b++;
 		nb_moves++;
