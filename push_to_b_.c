@@ -6,7 +6,7 @@
 /*   By: lissam <lissam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 08:50:14 by lissam            #+#    #+#             */
-/*   Updated: 2024/03/10 10:37:30 by lissam           ###   ########.fr       */
+/*   Updated: 2024/03/10 14:02:24 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,25 @@ void	do_rotate_both(t_data **stack_a, t_data **stack_b, int i, int j)
 
 void	do_reverse_rotate_both(t_data **stack_a, t_data **stack_b, int i, int j)
 {
-	int	min;
+	int	cna;
+	int	cnb;
 
-	min = min_index(i, j);
-	while (i < count_nodes(stack_a) && j < count_nodes(stack_b))
+	cna = count_nodes(stack_a);
+	cnb = count_nodes(stack_b);
+	while (i < cna && j < cnb)
 	{
 		rrr(stack_a, stack_b);
 		ft_putstr("rrr\n");
-		min++;
 		i++;
 		j++;
 	}
-	while (j < count_nodes(stack_b))
+	while (j < cnb)
 	{
 		reverse_rotate_b(stack_b);
 		ft_putstr("rrb\n");
 		j++;
 	}
-	while (i < count_nodes(stack_a))
+	while (i < cna)
 	{
 		reverse_rotate_b(stack_a);
 		ft_putstr("rra\n");
@@ -68,7 +69,10 @@ void	do_reverse_rotate_both(t_data **stack_a, t_data **stack_b, int i, int j)
 
 void	do_one_by_one_a(t_data **stack_a, int i)
 {
-	if (i <= count_nodes(stack_a) / 2)
+	int	cna;
+
+	cna = count_nodes(stack_a);
+	if (i <= cna / 2)
 	{
 		while (i > 0)
 		{
@@ -79,7 +83,7 @@ void	do_one_by_one_a(t_data **stack_a, int i)
 	}
 	else
 	{
-		while (i < count_nodes(stack_a))
+		while (i < cna)
 		{
 			reverse_rotate_a(stack_a);
 			ft_putstr("rra\n");
@@ -90,7 +94,10 @@ void	do_one_by_one_a(t_data **stack_a, int i)
 
 void	do_one_by_one_b(t_data **stack_b, int j)
 {
-	if (j <= count_nodes(stack_b) / 2)
+	int	cnb;
+
+	cnb = count_nodes(stack_b);
+	if (j <= cnb / 2)
 	{
 		while (j > 0)
 		{
@@ -101,7 +108,7 @@ void	do_one_by_one_b(t_data **stack_b, int j)
 	}
 	else
 	{
-		while (j < count_nodes(stack_b))
+		while (j < cnb)
 		{
 			reverse_rotate_b(stack_b);
 			ft_putstr("rrb\n");
